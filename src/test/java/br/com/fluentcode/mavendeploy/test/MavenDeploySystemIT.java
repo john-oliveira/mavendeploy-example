@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 
-public class MavenDeploySystemTest {
+public class MavenDeploySystemIT {
 	
 	private WebDriver driver;
 	
@@ -28,7 +28,7 @@ public class MavenDeploySystemTest {
 	}
 	
 	@Test
-	public void deveCarregarOIndexJsp(){
+	public void shouldLoadIndexJsp(){
 		WebElement h2 = this.driver.findElement(By.tagName("h2"));
 		assertThat(h2.getText(), equalTo("Hello World!"));
 	}
