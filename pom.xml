@@ -91,7 +91,7 @@
 						<executions>
 							<execution>
 								<id>deploy</id>
-								<phase>test</phase>
+								<phase>pre-integration-test</phase>
 								<goals>
 									<!-- The deploy goal requires that you have an instance of JBoss 
 										AS running. -->
