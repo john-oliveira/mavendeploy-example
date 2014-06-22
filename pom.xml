@@ -9,7 +9,7 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<!-- By default skip tests is true -->
+		<!-- By default skip integration tests is true -->
 		<skipTests>true</skipTests>
 	</properties>
 
@@ -44,16 +44,18 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-			<!-- NOTA mvn install -Pambiente-integracao já está rodando os IT após 
-				o deploy no jboss -->
+			<!-- The Failsafe Plugin is designed to run integration tests while the 
+				Surefire Plugins is designed to run unit tests. By default, the Failsafe 
+				Plugin will automatically include all test classes with the following wildcard 
+				patterns: "**/IT*.java", "**/*IT.java", "**/*ITCase.java". -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
 				<version>2.17</version>
 				<configuration>
-					<!-- By default skip tests is true. This will allow you to run with 
-						tests disabled by default and to run them with this command: mvn install 
-						-DskipTests=false -->
+					<!-- By default skip integration tests is true. This will allow you 
+						to run with tests disabled by default and to run them with this command: 
+						mvn install -DskipTests=false -->
 					<skipTests>${skipTests}</skipTests>
 				</configuration>
 				<executions>
