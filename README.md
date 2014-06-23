@@ -2,6 +2,6 @@ This is a sample project to deploy on JBoss server and run all tests, including 
 
 With a running instance of JBoss 7 execute the command:
 
-`mvn clean install -Pambiente-integracao -DskipTests=false`
+`mvn clean install -Pambiente-integracao`
 
-The profile 'environment-integration' instructs to deploy on JBoss 7 and -DskipTests=false parameter instructs the run tests (see pom.xml).
+The profile 'environment-integration' instructs to deploy on JBoss 7 and run integration tests (see pom.xml).
