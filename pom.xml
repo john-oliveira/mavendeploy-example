@@ -8,11 +8,6 @@
 	<name>mavendeploy-example Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
-	<properties>
-		<!-- By default skip tests is true -->
-		<skipTests>true</skipTests>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -44,29 +39,6 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-			<!-- The Failsafe Plugin is designed to run integration tests while the 
-				Surefire Plugins is designed to run unit tests. By default, the Failsafe 
-				Plugin will automatically include all test classes with the following wildcard 
-				patterns: "**/IT*.java", "**/*IT.java", "**/*ITCase.java". -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-failsafe-plugin</artifactId>
-				<version>2.17</version>
-				<configuration>
-					<!-- By default skip tests is true. This will allow you 
-						to run with tests disabled by default and to run them with this command: 
-						mvn install -DskipTests=false -->
-					<skipTests>${skipTests}</skipTests>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>integration-test</goal>
-							<goal>verify</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
 		<finalName>mavendeploy-example</finalName>
 	</build>
@@ -96,6 +68,23 @@
 									<!-- The deploy goal requires that you have an instance of JBoss 
 										AS running. -->
 									<goal>deploy</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<!-- The Failsafe Plugin is designed to run integration tests while 
+						the Surefire Plugins is designed to run unit tests. By default, the Failsafe 
+						Plugin will automatically include all test classes with the following wildcard 
+						patterns: "**/IT*.java", "**/*IT.java", "**/*ITCase.java". -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-failsafe-plugin</artifactId>
+						<version>2.17</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>integration-test</goal>
+									<goal>verify</goal>
 								</goals>
 							</execution>
 						</executions>
