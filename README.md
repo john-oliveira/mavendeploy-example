@@ -1,7 +1,7 @@
-Este é um projeto exemplo para fazer o deploy no servidor JBoss e rodar todos os testes, inclusive os testes de integração, nesse caso são os testes de aceitação com Selenium.
+This is a sample project to deploy on JBoss server and run all tests, including integration tests in this case are the acceptance tests with Selenium. 
 
-Com uma instância do JBoss 7 rodando execute o comando: 
+With a running instance of JBoss 7 execute the command:
 
-`mvn install -Pambiente-integracao -DskipTests=false`
+`mvn clean install -Pambiente-integracao -DskipTests=false`
 
-O profile 'ambiente-integracao' instrui a fazer o deploy no JBoss 7 e o parâmetro skipTests=false instrui a rodar os testes de integração (Veja o pom.xml).
+The profile 'environment-integration' instructs to deploy on JBoss 7 and -DskipTests=false parameter instructs the run integration tests (see pom.xml).

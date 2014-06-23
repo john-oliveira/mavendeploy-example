@@ -72,7 +72,7 @@
 	</build>
 
 	<!-- We could have different profiles for each environment. To invoke this 
-		profile: mvn test -Pambiente-integracao -->
+		profile: mvn install -Pambiente-integracao -->
 	<profiles>
 		<profile>
 			<id>ambiente-integracao</id>
